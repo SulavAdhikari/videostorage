@@ -2,7 +2,6 @@
 
 This is a assignment project for internship position in RPAlabs. I have decided to use django web framework for this project. 
 
-===
 
 # Requirements
 
@@ -12,7 +11,6 @@ This is a assignment project for internship position in RPAlabs. I have decided 
 
 Required python modules are given in `requirements.txt`.
 
-===
 
 # Installation
 
@@ -23,7 +21,6 @@ Make sure you are using virtual environment if not you can use
 `python3 -m pipenv install -r requirements.txt`
 to install the modules in a new virtual env
 
-===
 
 # Structure
 
@@ -39,7 +36,6 @@ In our case, we have following endpoints (URLs):
 | api/search/   | GET           | search using title|
 | api/cost      | GET           | calculate cost    |
 
-====
 
 # Use
 
