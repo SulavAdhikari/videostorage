@@ -12,5 +12,4 @@ urlpatterns = [
     path('listvideos/', AllVideosListView.as_view()),
     path('search/', FilterVideos.as_view()),
     path('cost/', CostCalculator.as_view()),
-    
 ]
