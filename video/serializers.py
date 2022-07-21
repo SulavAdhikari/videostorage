@@ -15,31 +15,32 @@ class Videoserializer(serializers.ModelSerializer):
 
     def validate(self, data):
         video = data.get('video')
-        if video.name.endswith('.mp4') or video.name.endswith('.mkv'):
-            
-            clip =  VideoFileClip(video.temporary_file_path())
-            duration = clip.duration
-            
-            if duration > 10*60:
-                raise serializers.ValidationError({
-                'message':'video exceeds length limit'
-                })
-           
-            if video.size > UPLOAD_LIMIT:
-                raise serializers.ValidationError({
-                'message':'file is too big'
-            })
-   
-            return{
-                'title':video.name,
-                'video':video,
-                'size':video.size,
-                'length':duration
-            }
-        else:
+        if not (video.name.endswith('.mp4') or video.name.endswith('.mkv')):
             raise serializers.ValidationError({
                 'message':'invalid file type'
             },)
+            
+        clip =  VideoFileClip(video.temporary_file_path())
+        duration = clip.duration
+        
+        if duration > 10*60:
+            raise serializers.ValidationError({
+            'message':'video exceeds length limit'
+            })
+        
+        if video.size > UPLOAD_LIMIT:
+            raise serializers.ValidationError({
+            'message':'file is too big'
+        })
+
+        return{
+            'title':video.name,
+            'video':video,
+            'size':video.size,
+            'length':duration
+        }
+        
+            
 
 
 class ListAllSerializer(serializers.ModelSerializer):

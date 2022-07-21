@@ -4,10 +4,13 @@ from .views import (
     FileUploadView, 
     AllVideosListView,
     FilterVideos,
+    CostCalculator,
 )
 
 urlpatterns = [
     path('upload/', FileUploadView.as_view()),
-    path('list/', AllVideosListView.as_view()),
+    path('listallvideos/', AllVideosListView.as_view()),
     path('search/', FilterVideos.as_view()),
+    path('cost/', CostCalculator.as_view()),
+    
 ]
