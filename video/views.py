@@ -20,7 +20,7 @@ class FileUploadView(views.APIView):
         serializer.save()
         return Response(serializer.data, status=201)
 
-# HTTP endpoints for /listallvideos
+# HTTP endpoints for /listvideos
 class AllVideosListView(ListAPIView):
     model = Video
     serializer_class = ListAllSerializer
