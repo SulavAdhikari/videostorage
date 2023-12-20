@@ -1,6 +1,6 @@
 #  Overview
 
-This is a assignment project for internship position in RPAlabs. I have decided to use django web framework for this project. 
+This is a DJango project for storing videos. I have decided to use django web framework for this project. 
 
 
 # Requirements
